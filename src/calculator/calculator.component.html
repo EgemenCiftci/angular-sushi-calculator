@@ -1,0 +1,12 @@
+<h1>Sushi Calculator</h1>
+<input
+  type="number"
+  placeholder="Rolls Count"
+  min="0"
+  [(ngModel)]="rollsCount"
+/>
+<p>Rice: {{ rice() | number: '1.2-2' }} cups</p>
+<p>Water: {{ water() | number: '1.2-2' }} cups</p>
+<p>Vinegar: {{ vinegar() | number: '1.2-2' }} tablespoon(s)</p>
+<p>Sugar: {{ sugar() | number: '1.2-2' }} tablespoon(s)</p>
+<p>Salt: {{ salt() | number: '1.2-2' }} teaspoon(s)</p>
