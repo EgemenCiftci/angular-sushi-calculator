@@ -1,12 +1,35 @@
 <h1>🍣Sushi Calculator</h1>
-<input
-  type="number"
-  placeholder="Rolls Count"
-  min="0"
-  [(ngModel)]="rollsCount"
-/>
-<p>Rice: {{ rice() | number: '1.2-2' }} cups</p>
-<p>Water: {{ water() | number: '1.2-2' }} cups</p>
-<p>Vinegar: {{ vinegar() | number: '1.2-2' }} tablespoon(s)</p>
-<p>Sugar: {{ sugar() | number: '1.2-2' }} tablespoon(s)</p>
-<p>Salt: {{ salt() | number: '1.2-2' }} teaspoon(s)</p>
+<table>
+  <tr>
+    <td>I want</td>
+    <td class="align-right">
+      <input type="number" min="0" [(ngModel)]="rollsCount" />
+    </td>
+    <td>roll(s)</td>
+  </tr>
+  <tr>
+    <td>Rice</td>
+    <td class="align-right">{{ rice() | number: '1.2-2' }}</td>
+    <td>cup(s)</td>
+  </tr>
+  <tr>
+    <td>Water</td>
+    <td class="align-right">{{ water() | number: '1.2-2' }}</td>
+    <td>cup(s)</td>
+  </tr>
+  <tr>
+    <td>Vinegar</td>
+    <td class="align-right">{{ vinegar() | number: '1.2-2' }}</td>
+    <td>tablespoon(s)</td>
+  </tr>
+  <tr>
+    <td>Sugar</td>
+    <td class="align-right">{{ sugar() | number: '1.2-2' }}</td>
+    <td>tablespoon(s)</td>
+  </tr>
+  <tr>
+    <td>Salt</td>
+    <td class="align-right">{{ salt() | number: '1.2-2' }}</td>
+    <td>teaspoon(s)</td>
+  </tr>
+</table>
