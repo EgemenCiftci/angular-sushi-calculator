@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./calculator.component.css'],
 })
 export class CalculatorComponent {
+  minRollsCount = 0;
+  maxRollsCount = 999;
   private _rollsCount = signal(NaN);
 
   get rollsCount(): number {
