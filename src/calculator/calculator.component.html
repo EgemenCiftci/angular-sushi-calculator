@@ -1,55 +1,102 @@
-<h1>🍣Sushi Calculator</h1>
-<table>
-  <tr>
-    <td>I will make</td>
-    <td class="align-right">
-      <input
-        type="number"
-        [min]="minRollsCount"
-        [max]="maxRollsCount"
-        step="1"
-        [(ngModel)]="rollsCount"
-      />
-    </td>
-    <td>roll(s)</td>
-  </tr>
-  <tr>
-    <td>Rice</td>
-    <td class="align-right">{{ rice() | number: '1.2-2' }}</td>
-    <td>cup(s)</td>
-  </tr>
-  <tr>
-    <td>Water</td>
-    <td class="align-right">{{ water() | number: '1.2-2' }}</td>
-    <td>cup(s)</td>
-  </tr>
-  <tr>
-    <td>Vinegar</td>
-    <td class="align-right">{{ vinegar() | number: '1.2-2' }}</td>
-    <td>tablespoon(s)</td>
-  </tr>
-  <tr>
-    <td>Sugar</td>
-    <td class="align-right">{{ sugar() | number: '1.2-2' }}</td>
-    <td>tablespoon(s)</td>
-  </tr>
-  <tr>
-    <td>Salt</td>
-    <td class="align-right">{{ salt() | number: '1.2-2' }}</td>
-    <td>teaspoon(s)</td>
-  </tr>
-</table>
-<h3>Recipe:</h3>
-<ol>
-  <li>Wash the rice until there is no more starch coming out of it.</li>
-  <li>Boil the water.</li>
-  <li>Put the rice in boiled water. Cover the pot.</li>
-  <li>Cook in low heat. Cook until there is no water left in the pot.</li>
-  <li>Mix vinegar, sugar and salt until all solids are mixed.</li>
-  <li>Pour the mixture on the rice and mix well.</li>
-  <li>Wait the rice cool down to room temperature before rolling.</li>
-</ol>
-<p>
-  © 2023
-  <a href="https://egemen-ciftci.web.app/" target="_blank">Egemen Çiftci</a>
-</p>
+<main class="page-shell">
+  <header class="page-header">
+    <div class="brand-mark" aria-hidden="true">🍣</div>
+    <div>
+      <p class="eyebrow">YOUR HOME SUSHI COMPANION</p>
+      <h1>Sushi night, sorted.</h1>
+      <p class="intro">
+        Pick how many rolls you’re making. We’ll take care of the rice
+        proportions.
+      </p>
+    </div>
+  </header>
+
+  <div class="content-grid">
+    <section class="panel calculator-panel" aria-labelledby="calculator-title">
+      <div class="panel-heading">
+        <p class="eyebrow">01 / SET YOUR BATCH</p>
+        <h2 id="calculator-title">How many rolls?</h2>
+        <p>Scale the ingredients to match your sushi plans.</p>
+      </div>
+
+      <div class="roll-field">
+        <label for="roll-count">Rolls to make</label>
+        <div class="quantity-control">
+          <input
+            id="roll-count"
+            name="rollCount"
+            type="number"
+            [min]="minRollsCount"
+            [max]="maxRollsCount"
+            step="1"
+            inputmode="numeric"
+            aria-describedby="roll-count-hint"
+            [(ngModel)]="rollsCount"
+          />
+          <span>rolls</span>
+        </div>
+        <p id="roll-count-hint" class="field-hint">
+          Choose any amount from {{ minRollsCount }} to {{ maxRollsCount }}.
+        </p>
+      </div>
+
+      <div class="ingredients">
+        <div class="section-heading">
+          <h3>Ingredients</h3>
+          <span>YOU’LL NEED</span>
+        </div>
+        <dl class="ingredient-grid">
+          <div class="ingredient-card">
+            <dt>Rice</dt>
+            <dd><span>{{ rice() | number: '1.2-2' }}</span> cups</dd>
+          </div>
+          <div class="ingredient-card">
+            <dt>Water</dt>
+            <dd><span>{{ water() | number: '1.2-2' }}</span> cups</dd>
+          </div>
+          <div class="ingredient-card">
+            <dt>Vinegar</dt>
+            <dd><span>{{ vinegar() | number: '1.2-2' }}</span> tbsp</dd>
+          </div>
+          <div class="ingredient-card">
+            <dt>Sugar</dt>
+            <dd><span>{{ sugar() | number: '1.2-2' }}</span> tbsp</dd>
+          </div>
+          <div class="ingredient-card">
+            <dt>Salt</dt>
+            <dd><span>{{ salt() | number: '1.2-2' }}</span> tsp</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="panel recipe-panel" aria-labelledby="recipe-title">
+      <div class="panel-heading">
+        <p class="eyebrow">02 / MAKE IT DELICIOUS</p>
+        <h2 id="recipe-title">Sushi rice, step by step</h2>
+        <p>Good rice is the start of every great roll.</p>
+      </div>
+
+      <ol class="recipe-list">
+        <li>Rinse the rice until the water runs clear.</li>
+        <li>Bring the water to a boil.</li>
+        <li>Add the rice, cover the pot, and reduce the heat.</li>
+        <li>Cook on low until the water has been absorbed.</li>
+        <li>Stir the vinegar, sugar, and salt until dissolved.</li>
+        <li>Pour the seasoning over the rice and gently mix.</li>
+        <li>Let the rice cool to room temperature before rolling.</li>
+      </ol>
+    </section>
+  </div>
+
+  <footer class="page-footer">
+    <span>Made for cozy sushi nights</span>
+    <a
+      href="https://egemen-ciftci.web.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      © 2023 Egemen Çiftci
+    </a>
+  </footer>
+</main>
